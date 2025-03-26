@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  todo:
+    build: .
+    container_name: todo
+    ports:
+      - "${APP_PORT}:5000"
+    volumes:
+      - app-logs:/app/var/logs
+
+volumes:
+  app-logs:
+    name: ${APP_LOG_NAME}
